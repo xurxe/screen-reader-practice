@@ -28,9 +28,17 @@ body {
   min-width: 300px;
 }
 
-.ScreenreaderOnly {
+.VisuallyHidden:not(:focus):not(:focus-within):not(:active) {
   position: absolute;
-  left: -9999px;
+  height: 1px;
+  width: 1px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
 }
 
 /* ---- */
@@ -93,6 +101,14 @@ strong {
 
 em {
   font-style: italic;
+}
+
+ol {
+  padding-left: 2em;
+}
+
+ol li {
+  margin-bottom: 0.5em;
 }
 
 .LightTextDarkBackground {
@@ -176,6 +192,49 @@ change calc formulas manually if any parameters change!
   }
 }
 
+/* --- */
+/* NAV */
+/* --- */
+
+.Nav {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: var(--purple);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Nav_ul {
+  list-style: none;
+}
+
+.Nav_li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.Nav_link {
+  padding: 0.2em 0.5em;
+  text-decoration: none;
+  color: white;
+}
+
+.Nav_link:hover,
+.Nav_link:focus {
+  text-decoration: underline;
+}
+
+.Nav_link___home {
+  font-size: 1.5em;
+}
+
+.Nav_link___home:hover,
+.Nav_link___home:focus {
+  color: var(--purple);
+  background-color: white;
+}
+
 /* ------ */
 /* HEADER */
 /* ------ */
@@ -189,6 +248,12 @@ change calc formulas manually if any parameters change!
 /* ---- */
 .Main {
   padding-bottom: 2rem;
+}
+
+.Img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
 }
 
 /* ------ */
